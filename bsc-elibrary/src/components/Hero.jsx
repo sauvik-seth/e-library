@@ -28,7 +28,7 @@ const Hero = () => {
 
             {/* CTA Button */}
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
-              <Link to="/category/Computer-Science">
+              <Link to="/all-books">
                 <button className="group inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900">
                   Start Exploring
                   <BookDown className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

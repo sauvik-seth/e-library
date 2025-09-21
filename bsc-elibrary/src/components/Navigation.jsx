@@ -8,9 +8,13 @@ const Navigation = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/books", label: "Books" },
+    { path: "/all-books", label: "Books" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
+    {
+      label: "Our Team",
+      path: "/our-team",
+    },
   ];
 
   const isActive = (path) => location.pathname === path;

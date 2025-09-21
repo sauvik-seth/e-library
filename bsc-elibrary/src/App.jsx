@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Books from "./components/Books";
+import Team from "./components/Team";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/category/:categoryName" element={<Books />} />
         <Route path="/all-books" element={<Books />} />
+        <Route path="/our-team" element={<Team />} />
       </Routes>
       <Footer />
     </Router>
