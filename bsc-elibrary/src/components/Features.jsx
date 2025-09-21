@@ -70,7 +70,7 @@ export default function FeaturesTicker() {
           <div
             className="flex gap-6 animate-scroll"
             style={{
-              animation: "scroll 40s linear infinite",
+              animation: "scroll 30s linear infinite",
               minWidth: "calc(200% + 150px)",
             }}
           >

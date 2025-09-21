@@ -34,7 +34,7 @@ const Navigation = () => {
               alt="B.Sc. e-Library Logo"
               className="h-8 w-8 object-contain"
             />
-           ReadSphere
+            ReadSphere
           </Link>
 
           {/* Nav Links */}
