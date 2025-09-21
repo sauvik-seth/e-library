@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "bookId": "1",
+    "reviewer": "Alice Smith",
+    "rating": 5,
+    "comment": "An absolute masterpiece! The characters are so well-developed."
+  },
+  {
+    "id": "2",
+    "bookId": "2",
+    "reviewer": "Bob Johnson",
+    "rating": 4,
+    "comment": "A powerful story that everyone should read. Very thought-provoking."
+  },
+  {
+    "id": "3",
+    "bookId": "3",
+    "reviewer": "Charlie Brown",
+    "rating": 5,
+    "comment": "Orwell's vision is chillingly relevant even today. A must-read."
+  },
+  {
+    "id": "4",
+    "bookId": "4",
+    "reviewer": "Diana Prince",
+    "rating": 4,
+    "comment": "A delightful romance with witty dialogue. Austen at her best."
+  },
+  {
+    "id": "5",
+    "bookId": "5",
+    "reviewer": "Eve Adams",
+    "rating": 3,
+    "comment": "An interesting take on adolescence, though Holden can be a bit much at times."
+  }
+]

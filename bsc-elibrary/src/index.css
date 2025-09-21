@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+
+:root {
+  --primary-blue: #2563eb;
+  --primary-orange: #f97316;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-right-to-left {
+  animation: slide-right-to-left 20s linear infinite;
+}
+
+/* Custom styles for book cards */
+.book-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.book-card:hover {
+  @apply transform -translate-y-2;
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "description": "A novel about the Jazz Age.",
+    "image": "https://via.placeholder.com/150/0000FF/FFFFFF?text=Book1",
+    "rating": 4.5
+  },
+  {
+    "id": "2",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic",
+    "description": "A story about racial injustice in the American South.",
+    "image": "https://via.placeholder.com/150/FF0000/FFFFFF?text=Book2",
+    "rating": 4.8
+  },
+  {
+    "id": "3",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "description": "A dystopian social science fiction novel.",
+    "image": "https://via.placeholder.com/150/00FF00/FFFFFF?text=Book3",
+    "rating": 4.7
+  },
+  {
+    "id": "4",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "description": "A romantic novel of manners.",
+    "image": "https://via.placeholder.com/150/FFFF00/000000?text=Book4",
+    "rating": 4.6
+  },
+  {
+    "id": "5",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Coming-of-age",
+    "description": "A novel about teenage angst and alienation.",
+    "image": "https://via.placeholder.com/150/FF00FF/FFFFFF?text=Book5",
+    "rating": 4.2
+  }
+]
