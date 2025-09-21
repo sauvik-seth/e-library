@@ -11,7 +11,8 @@ function App() {
   return (
     <Router>
       <Navigation />
-      <Routes>
+      <main className="min-h-screen">
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -19,6 +20,7 @@ function App() {
         <Route path="/all-books" element={<Books />} />
         <Route path="/our-team" element={<Team />} />
       </Routes>
+      </main>
       <Footer />
     </Router>
   );

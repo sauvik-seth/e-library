@@ -22,8 +22,8 @@ const books = [
   },
   {
     id: 2,
-    title: "Organic Chemistry",
-    author: "Paula Bruice",
+    title: "Let us C",
+    author: "Yashvant Kanetkar",
     category: "Computer Science",
     coverImage: "/images/image1.png",
     downloadLink:
@@ -31,12 +31,30 @@ const books = [
   },
   {
     id: 3,
-    title: "Advanced Calculus",
-    author: "Michael Spivak",
-    category: "Math",
-    coverImage: "/activities/math.webp",
+    title: "Digital Electronics",
+    author: "Anil k.Maini",
+    category: "Computer Science",
+    coverImage: "https://m.media-amazon.com/images/I/71X1jS-9iOL._UF1000,1000_QL80_.jpg",
     downloadLink:
-      "https://drive.google.com/file/d/EXAMPLE_LINK/view?usp=sharing",
+      "https://drive.google.com/file/d/EXAMPLE_LINK/view?usp=sharinghttps://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
+  },
+   {
+    id: 4,
+    title:"Computer System Architecture",
+    author: "M. Morris Mano",
+    category: "Computer Science",
+    coverImage: "https://m.media-amazon.com/images/I/81Ve58ZJLEL.jpg",
+    downloadLink:
+      "https://drive.google.com/file/d/EXAMPLE_LINK/view?usp=sharinghttps://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
+  },
+   {
+    id: 5,
+    title:"Introduction to programming using Java",
+    author: "David J.Eck Hobert and William Smith Colleges",
+    category: "Computer Science",
+    coverImage: "https://m.media-amazon.com/images/I/61Xdjv+7R3L._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://www.iitk.ac.in/esc101/share/downloads/javanotes5.pdf",
   },
   // Add more books here
 ];

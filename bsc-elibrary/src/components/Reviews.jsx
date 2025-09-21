@@ -67,11 +67,10 @@ export default function Reviews() {
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10" />
 
-          {/* continuous loop, same pattern as FeaturesTicker */}
+          {/* continuous loop with responsive animation speed */}
           <div
             className="flex gap-6 animate-reviews-scroll"
             style={{
-              animation: "reviews-scroll 40s linear infinite",
               minWidth: "calc(200% + 150px)",
             }}
           >
@@ -95,15 +94,44 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* keyframes for the continuous loop */}
+      {/* Responsive keyframes with faster mobile animation */}
       <style>{`
         @keyframes reviews-scroll {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        /* respects reduced motion */
+        
+        /* Default animation speed for desktop */
+        .animate-reviews-scroll {
+          animation: reviews-scroll 40s linear infinite;
+        }
+        
+        /* Faster animation for tablets */
+        @media (max-width: 1024px) {
+          .animate-reviews-scroll {
+            animation: reviews-scroll 25s linear infinite;
+          }
+        }
+        
+        /* Even faster animation for mobile devices */
+        @media (max-width: 768px) {
+          .animate-reviews-scroll {
+            animation: reviews-scroll 15s linear infinite;
+          }
+        }
+        
+        /* Fastest animation for small mobile devices */
+        @media (max-width: 480px) {
+          .animate-reviews-scroll {
+            animation: reviews-scroll 12s linear infinite;
+          }
+        }
+        
+        /* Respects reduced motion preferences */
         @media (prefers-reduced-motion: reduce) {
-          .animate-reviews-scroll { animation: none !important; }
+          .animate-reviews-scroll { 
+            animation: none !important; 
+          }
         }
       `}</style>
     </section>

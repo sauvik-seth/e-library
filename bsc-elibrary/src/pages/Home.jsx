@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import CategoryList from '../components/CategoryList'; // Import the new CategoryList component
+import CategoryList from "../components/CategoryList"; // Import the new CategoryList component
+import ELibraryServices from "../components/ELibraryServices";
 // import Books from '../components/Books';
 import Reviews from '../components/Reviews';
 
@@ -31,6 +32,7 @@ const Home = () => {
       <Hero />
       <Features />
       <CategoryList /> {/* Add the CategoryList component here */}
+      <ELibraryServices />
       {/* <Books /> */}
       <Reviews />
       <div className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
