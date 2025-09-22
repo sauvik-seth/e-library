@@ -108,7 +108,7 @@ const books = [
       "https://m.media-amazon.com/images/I/51D3pEE64xL._UF1000,1000_QL80_.jpg",
     downloadLink: "https://share.google/CvGFAX9H3cgjF9ZE0",
     description:
-      "Master data structures and algorithms with clear explanations and Java code examples.",
+      "A rigorous classic on polynomial equations covering roots, transformations, symmetric functions, and algebraic methods foundational to higher algebra.",
   },
   {
     id: 9,
@@ -119,7 +119,67 @@ const books = [
       "https://m.media-amazon.com/images/I/31evVVo3eYL._UF1000,1000_QL80_.jpg",
     downloadLink: "https://share.google/HjtzXYL4WAphfykun",
     description:
-      "Master data structures and algorithms with clear explanations and Java code examples.",
+      "A student-focused treatment of limits, derivatives, integrals, and applications, emphasizing problem-solving and conceptual understanding for beginners.",
+  },
+  {
+    id: 10,
+    title: "Physical chemistry",
+    author: "Atkin",
+    category: "Chemistry",
+    coverImage:"https://m.media-amazon.com/images/I/91PS2c6hjqL._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://nowgonggirlscollege.co.in/attendence/classnotes/files/1621583343.pdf",
+    description:
+      "An authoritative overview of thermodynamics, kinetics, quantum chemistry, and spectroscopy that bridges theory with practical chemical systems.",
+  },
+  {
+    id: 11,
+    title: "Organic chemistry",
+    author: "Jonathan, Nick",
+    category: "Chemistry",
+    coverImage:"https://m.media-amazon.com/images/I/61XeLR07VFL._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
+    description:
+      "A mechanisms-first approach that builds deep intuition for reactivity and synthesis, with rich problems and real-world molecular reasoning.",
+  },
+  {
+    id: 12,
+    title: "Concepts of modern physics",
+    author: "Arthur Beiser",
+    category: "Physics",
+    coverImage:"https://m.media-amazon.com/images/I/71jSV4NxceL.jpg",
+    downloadLink: "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
+    description:
+      "A clear introduction to special relativity, quantum theory, atomic and nuclear physics, prioritizing conceptual frameworks with worked derivations.",
+  },
+  {
+    id: 13,
+    title: "Quantam Mechanics",
+    author: "Nouredine Zettili",
+    category: "Physics",
+    coverImage:"https://m.media-amazon.com/images/I/71b8cOIVY3L._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://www.mmmut.ac.in/News_content/02110tpnews_11232020.pdf",
+    description:
+      "A problem-solving centered text that blends formalism with hundreds of worked examples and exercises to master quantum mechanics concepts and methods.",
+  },
+  {
+    id: 14,
+    title: "Introduction to Human physiology",
+    author: "Dr. Azza Sajid Alkinany",
+    category: "Biology",
+    coverImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkEAQZdTLpzOG0lWfRZdFSAy1ZoezfOHLSw&s",
+    downloadLink: "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
+    description:
+      "A concise survey of body systems explaining cellular function, organ integration, and homeostasis with accessible diagrams and clinical context.",
+  },
+  {
+    id: 15,
+    title: "Essentials of Anatomy and Physiology ",
+    author: "Valerie C. Scanlon",
+    category: "Biology",
+    coverImage:"https://m.media-amazon.com/images/I/916z0ZZmqxL._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
+    description:
+      "An easy-to-follow guide to human anatomy and physiology that connects structure to function with clinical notes, visuals, and review questions.",
   },
 ];
 
@@ -134,10 +194,7 @@ const Books = () => {
 
   useEffect(() => {
     if (categoryName) {
-      const decodedCategory = decodeURIComponent(categoryName).replace(
-        /-/g,
-        " "
-      );
+      const decodedCategory = decodeURIComponent(categoryName).replace(/-/g, " ");
       setSelectedCategory(decodedCategory);
     } else {
       setSelectedCategory("All");
@@ -173,10 +230,7 @@ const Books = () => {
 
   const handleConfirmDownload = () => {
     setIsDownloading(true);
-
-    // Simulate download process
     setTimeout(() => {
-      // Open the download link
       window.open(selectedBook.downloadLink, "_blank", "noopener,noreferrer");
       setIsDownloading(false);
       setShowDownloadModal(false);
@@ -190,29 +244,23 @@ const Books = () => {
     setIsDownloading(false);
   };
 
-  // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && showDownloadModal) {
         handleCancelDownload();
       }
     };
-
     if (showDownloadModal) {
       document.addEventListener("keydown", handleEscape);
     }
-
     return () => document.removeEventListener("keydown", handleEscape);
   }, [showDownloadModal]);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Beautiful Blue Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-300/20 via-transparent to-indigo-300/20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/10 to-transparent"></div>
-
-        {/* Animated gradient orbs */}
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-400/30 to-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div
           className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl animate-pulse"
@@ -225,7 +273,6 @@ const Books = () => {
       </div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="text-gray-900">
@@ -241,7 +288,6 @@ const Books = () => {
           </p>
         </div>
 
-        {/* Enhanced Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-16">
           {categories.map((category) => (
             <button
@@ -258,7 +304,6 @@ const Books = () => {
           ))}
         </div>
 
-        {/* Books Grid */}
         {filteredBooks.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredBooks.map((book) => (
@@ -268,9 +313,7 @@ const Books = () => {
                 onMouseEnter={() => setHoveredCard(book.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Glassmorphism Card */}
                 <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
-                  {/* Book Cover */}
                   <div className="relative overflow-hidden rounded-t-3xl">
                     <img
                       src={book.coverImage}
@@ -279,11 +322,7 @@ const Books = () => {
                       decoding="async"
                       className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110"
                     />
-
-                    {/* Overlay Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                    {/* Favorite Button */}
                     <button
                       onClick={(e) => {
                         e.preventDefault();
@@ -301,9 +340,7 @@ const Books = () => {
                     </button>
                   </div>
 
-                  {/* Card Content */}
                   <div className="p-6">
-                    {/* Title and Author */}
                     <div className="mb-4">
                       <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
                         {book.title}
@@ -311,12 +348,10 @@ const Books = () => {
                       <p className="text-gray-600 font-medium">{book.author}</p>
                     </div>
 
-                    {/* Description */}
                     <p className="text-gray-500 text-sm mb-8 line-clamp-3">
                       {book.description}
                     </p>
 
-                    {/* Download Button */}
                     <button
                       onClick={(e) => handleDownloadClick(book, e)}
                       className="group/btn relative w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3"
@@ -328,7 +363,6 @@ const Books = () => {
                   </div>
                 </div>
 
-                {/* Floating Elements */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               </div>
             ))}
@@ -349,18 +383,14 @@ const Books = () => {
         )}
       </div>
 
-      {/* Download Confirmation Modal */}
       {showDownloadModal && selectedBook && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-md"
             onClick={handleCancelDownload}
           ></div>
 
-          {/* Modal Content */}
           <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl max-w-md w-full mx-4 overflow-hidden animate-modal-in">
-            {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -376,7 +406,6 @@ const Books = () => {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-6">
               <div className="flex gap-4 mb-6">
                 <img
@@ -400,7 +429,6 @@ const Books = () => {
                 </p>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex gap-3">
                 <button
                   onClick={handleCancelDownload}
@@ -432,7 +460,6 @@ const Books = () => {
         </div>
       )}
 
-      {/* Enhanced CSS Styles */}
       <style jsx>{`
         @keyframes pulse {
           0%,
@@ -445,7 +472,6 @@ const Books = () => {
             transform: scale(1.05);
           }
         }
-
         @keyframes modal-in {
           0% {
             opacity: 0;
@@ -456,22 +482,18 @@ const Books = () => {
             transform: scale(1) translateY(0);
           }
         }
-
         .animate-modal-in {
           animation: modal-in 0.2s ease-out;
         }
-
         .book-card:hover .shadow-3xl {
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-
         .line-clamp-2 {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
-
         .line-clamp-3 {
           display: -webkit-box;
           -webkit-line-clamp: 3;
