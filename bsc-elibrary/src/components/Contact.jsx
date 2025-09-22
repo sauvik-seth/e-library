@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
-  const [status, setStatus] = useState('');        // success / error message
+  const [status, setStatus] = useState(""); // success / error message
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -20,14 +20,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setStatus('');  // reset status
+    setStatus(""); // reset status
 
     try {
       const response = await fetch("https://formspree.io/f/xdkwnzpq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -35,11 +35,14 @@ const Contact = () => {
       if (response.ok) {
         // submission went through
         setStatus("Thanks! Your message has been sent.");
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         // server returned an error
         const data = await response.json();
-        setStatus("❌ Something went wrong: " + (data.error || "Please try again later."));
+        setStatus(
+          "❌ Something went wrong: " +
+            (data.error || "Please try again later.")
+        );
       }
     } catch (error) {
       // network error, etc.
@@ -57,7 +60,7 @@ const Contact = () => {
           <div className="w-full md:w-1/2 flex items-center justify-center">
             <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/images/contactus.png"
+                src="/images/Contactus.webp"
                 alt="Contact us - Students studying"
                 className="w-full h-full object-cover"
               />
@@ -67,10 +70,15 @@ const Contact = () => {
           {/* Form Section */}
           <div className="w-full md:w-1/2">
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Contact Us</h2>
+              <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+                Contact Us
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Name
                   </label>
                   <input
@@ -85,7 +93,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email
                   </label>
                   <input
@@ -100,7 +111,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message
                   </label>
                   <textarea

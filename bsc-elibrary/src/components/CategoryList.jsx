@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const categories = [
   {
     name: "Computer Science",
-    image: "/images/cse.png",
+    image: "/images/cs.webp",
     description: "Explore the world of algorithms, programming, and data.",
   },
   {

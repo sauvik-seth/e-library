@@ -6,7 +6,7 @@ const categories = [
   "All",
   "Physics", 
   "Chemistry",
-  "Math",
+  "Mathematics",
   "Computer Science",
   "Biology",
 ];
@@ -17,7 +17,7 @@ const books = [
     title: "Beginning C++ Programming",
     author: "Richard Grimes",
     category: "Computer Science",
-    coverImage: "/images/cs.png",
+    coverImage: "/images/c++.webp",
     downloadLink: "https://notalentgeek.github.io/note/note/project/project-independent/pi-brp-beginning-c-programming/document/20170807-1504-cet-1-book-and-source-1.pdf",
     description: "Master the fundamentals of C++ programming with practical examples and exercises."
   },
@@ -26,7 +26,7 @@ const books = [
     title: "Let us C",
     author: "Yashvant Kanetkar",
     category: "Computer Science", 
-    coverImage: "/images/image1.png",
+    coverImage: "/images/letusc.webp",
     downloadLink: "https://www.scribd.com/document/357888203/let-us-c-yashwant-kanetkar-pdf",
     description: "The classic guide to C programming, perfect for beginners and experts alike."
   },
@@ -64,6 +64,33 @@ const books = [
     category: "Computer Science",
     coverImage: "/images/java.jpg",
     downloadLink: "https://gnindia.dronacharya.info/CSE/3rdSem/Downloads/DataStructures/Books/DATA-STRUCTURE-BOOK-12.pdf",
+    description: "Master data structures and algorithms with clear explanations and Java code examples."
+  },
+  {
+    id: 7,
+    title: "The Theory Of Equations Vol I",
+    author: "Burnside,William Snow",
+    category: "Mathematics",
+    coverImage: "https://cdn01.sapnaonline.com/bk_images/788/9781298618788.jpg",
+    downloadLink: "The Theory Of Equations Vol I : Burnside,William Snow. : Free Download, Borrow, and Streaming : Internet Archive https://share.google/ILxCsrvF2VKHg7ugC",
+    description: "Master data structures and algorithms with clear explanations and Java code examples."
+  },
+  {
+    id: 8,
+    title: "The Theory of equations",
+    author: "W.S. Burnside and A.W. Panton",
+    category: "Mathematics",
+    coverImage: "https://m.media-amazon.com/images/I/51D3pEE64xL._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://share.google/CvGFAX9H3cgjF9ZE0",
+    description: "Master data structures and algorithms with clear explanations and Java code examples."
+  },
+  {
+    id: 9,
+    title: "Calculus",
+    author: "WStrauss, Monty J",
+    category: "Mathematics",
+    coverImage: "https://m.media-amazon.com/images/I/31evVVo3eYL._UF1000,1000_QL80_.jpg",
+    downloadLink: "https://share.google/HjtzXYL4WAphfykun",
     description: "Master data structures and algorithms with clear explanations and Java code examples."
   },
 ];

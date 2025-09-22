@@ -1,6 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone, Instagram, Youtube, Linkedin, Twitter } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  Instagram,
+  Youtube,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,7 +16,7 @@ const Footer = () => {
       {/* Blue gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-300/20 via-transparent to-indigo-300/20"></div>
-        
+
         {/* Subtle blue abstract shapes */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blue-400/30 to-indigo-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl"></div>
@@ -17,9 +25,7 @@ const Footer = () => {
 
       {/* Large Background Text "READ" */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <div className="text-background-letters select-none">
-          READ
-        </div>
+        <div className="text-background-letters select-none">READ</div>
       </div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -28,32 +34,32 @@ const Footer = () => {
           <div className="space-y-8">
             {/* Navigation Links with Large Typography */}
             <div className="space-y-4">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="group flex items-center text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-300"
               >
                 Home
                 <ArrowRight className="ml-4 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 transform group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
-              
-              <Link 
-                to="/all-books" 
+
+              <Link
+                to="/all-books"
                 className="group flex items-center text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-300"
               >
                 Books
                 <ArrowRight className="ml-4 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 transform group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
-              
-              <Link 
-                to="/about" 
+
+              <Link
+                to="/about"
                 className="group flex items-center text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-300"
               >
                 About
                 <ArrowRight className="ml-4 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 transform group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
-              
-              <Link 
-                to="/contact" 
+
+              <Link
+                to="/contact"
                 className="group flex items-center text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 hover:text-blue-600 transition-all duration-300"
               >
                 Contact
@@ -70,7 +76,7 @@ const Footer = () => {
                 <Mail className="w-8 h-8 text-blue-600" />
                 <span className="font-mono">info@bscelibrary.com</span>
               </div>
-              
+
               <div className="flex items-center gap-4 text-2xl text-gray-800">
                 <Phone className="w-8 h-8 text-blue-600" />
                 <span className="font-mono">(123) 456-7890</span>
@@ -79,7 +85,9 @@ const Footer = () => {
 
             {/* Social Media */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Connect With Us</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Connect With Us
+              </h3>
               <div className="flex items-center gap-6">
                 <a
                   href="https://facebook.com"
@@ -89,7 +97,7 @@ const Footer = () => {
                 >
                   FB
                 </a>
-                
+
                 <a
                   href="https://twitter.com"
                   target="_blank"
@@ -98,7 +106,7 @@ const Footer = () => {
                 >
                   <Twitter className="w-6 h-6 text-gray-700 hover:text-blue-600" />
                 </a>
-                
+
                 <a
                   href="https://instagram.com"
                   target="_blank"
@@ -115,7 +123,8 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="mt-16 pt-8 border-t border-gray-300/50 text-center">
           <p className="text-gray-600 text-lg">
-            &copy; {new Date().getFullYear()} B.Sc. e-Library. All rights reserved.
+            &copy; {new Date().getFullYear()} B.Sc. e-Library. All rights
+            reserved.
           </p>
         </div>
       </div>
@@ -127,7 +136,7 @@ const Footer = () => {
           font-size: clamp(15rem, 25vw, 35rem);
           font-weight: 900;
           color: rgba(59, 130, 246, 0.08);
-          font-family: 'Arial Black', Arial, sans-serif;
+          font-family: "Arial Black", Arial, sans-serif;
           letter-spacing: 0.2em;
           line-height: 0.8;
           transform: rotate(-15deg);
@@ -140,12 +149,12 @@ const Footer = () => {
             font-size: 4rem;
             line-height: 1;
           }
-          
+
           .text-7xl {
             font-size: 3.5rem;
             line-height: 1;
           }
-          
+
           .text-6xl {
             font-size: 3rem;
             line-height: 1;
@@ -157,18 +166,18 @@ const Footer = () => {
             transform: rotate(-10deg);
           }
         }
-        
+
         @media (max-width: 640px) {
           .text-8xl {
             font-size: 2.5rem;
             line-height: 1.1;
           }
-          
+
           .text-7xl {
             font-size: 2.25rem;
             line-height: 1.1;
           }
-          
+
           .text-6xl {
             font-size: 2rem;
             line-height: 1.1;

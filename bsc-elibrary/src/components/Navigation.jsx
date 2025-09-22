@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [tappedLink, setTappedLink] = useState(null); // for mobile feedback
   const location = useLocation();
 
   const navLinks = [
@@ -15,6 +16,13 @@ const Navigation = () => {
   ];
 
   const isActive = (path) => location.pathname === path;
+
+  const handleLinkTap = (path) => {
+    // Show gradient briefly on tap for mobile
+    setTappedLink(path);
+    // Clear after short delay to feel responsive
+    setTimeout(() => setTappedLink(null), 500);
+  };
 
   return (
     <>
@@ -61,26 +69,34 @@ const Navigation = () => {
           ></div>
 
           {/* Menu Content */}
-          <div className="relative z-50 flex flex-col items-center justify-center space-y-6 md:space-y-8 p-4 md:p-8 w-full h-full">
-            <nav className="flex flex-col items-center space-y-6 md:space-y-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`nav-link-gradient relative text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold transition-all duration-300 uppercase tracking-wide cursor-pointer ${
-                    isActive(link.path) ? "is-active" : ""
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+          <div className="relative z-50 flex flex-col items-center justify-center space-y-7 md:space-y-8 p-4 md:p-8 w-full h-full">
+            <nav className="flex flex-col items-center space-y-7 md:space-y-8">
+              {navLinks.map((link) => {
+                const active = isActive(link.path);
+                const tapped = tappedLink === link.path;
+
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    tabIndex={0}
+                    onMouseDown={() => handleLinkTap(link.path)} // desktop press
+                    onTouchStart={() => handleLinkTap(link.path)} // mobile tap
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`nav-link-gradient relative text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold transition-all duration-300 uppercase tracking-wide cursor-pointer ${
+                      active ? "is-active" : tapped ? "is-tapped" : ""
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
         </div>
       )}
 
-      {/* Enhanced CSS Styles with Proper Hover */}
+      {/* Enhanced CSS Styles with Mobile Tap/Focus Color Change */}
       <style jsx>{`
         .nav-link-gradient {
           position: relative;
@@ -88,9 +104,10 @@ const Navigation = () => {
           width: fit-content;
           color: white;
           animation: slideIn 0.4s ease-out;
+          -webkit-tap-highlight-color: transparent;
         }
 
-        /* Active state - always has gradient */
+        /* Active route - always gradient */
         .nav-link-gradient.is-active {
           background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
           -webkit-background-clip: text;
@@ -99,14 +116,27 @@ const Navigation = () => {
           filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
         }
 
-        /* Hover state - gradient on hover */
-        .nav-link-gradient:hover:not(.is-active) {
+        /* Tapped state - programmatic feedback for mobile */
+        .nav-link-gradient.is-tapped {
           background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
           transform: skew(5deg);
+        }
+
+        /* Interactive states: hover (desktop), focus-visible (keyboard/tap), active (press) */
+        .nav-link-gradient:hover:not(.is-active),
+        .nav-link-gradient:focus-visible:not(.is-active),
+        .nav-link-gradient:active:not(.is-active) {
+          background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+          transform: skew(5deg);
+          outline: none;
         }
 
         /* Underline animation */
@@ -122,8 +152,12 @@ const Navigation = () => {
           border-radius: 2px;
         }
 
+        /* Show underline on all interactive states and active route */
         .nav-link-gradient:hover::after,
-        .nav-link-gradient.is-active::after {
+        .nav-link-gradient:focus-visible::after,
+        .nav-link-gradient:active::after,
+        .nav-link-gradient.is-active::after,
+        .nav-link-gradient.is-tapped::after {
           width: 100%;
           box-shadow: 0 0 20px rgba(59, 130, 246, 0.8),
             0 0 40px rgba(124, 58, 237, 0.4);

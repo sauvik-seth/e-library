@@ -50,14 +50,19 @@ const reviews = [
 const Stars = ({ rating = 0 }) => {
   const total = 5;
   return (
-    <div className="flex items-center gap-1" aria-label={`Rating: ${rating} out of 5`}>
+    <div
+      className="flex items-center gap-1"
+      aria-label={`Rating: ${rating} out of 5`}
+    >
       {Array.from({ length: total }).map((_, idx) => {
         const filled = idx < rating;
         return (
           <svg
             key={idx}
             viewBox="0 0 20 20"
-            className={`w-4 h-4 ${filled ? "text-yellow-400" : "text-gray-300"}`}
+            className={`w-4 h-4 ${
+              filled ? "text-yellow-400" : "text-gray-300"
+            }`}
             fill="currentColor"
             aria-hidden="true"
           >

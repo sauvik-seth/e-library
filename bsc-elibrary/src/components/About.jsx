@@ -25,7 +25,7 @@ const AboutUs = () => {
             <div className="relative w-full max-w-sm rounded-2xl bg-white p-4 shadow-2xl">
               <div className="aspect-w-4 aspect-h-4 overflow-hidden rounded-xl">
                 <img
-                  src="/images/aboutus.png" // Replace with your image path
+                  src="/images/Aboutus.webp" // Replace with your image path
                   alt="A person reading in a modern library setting"
                   className="h-full w-full object-cover"
                 />

@@ -10,15 +10,14 @@ const ELibraryServices = () => {
         "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&auto=format",
       bgColor: "rgba(163, 230, 53, 0.7)",
     },
-{
-  title: "All Your BSc Books Here",
-  description:
-    "Didn’t find your BSc book? Don’t worry! Explore and access a wide collection of academic books tailored for BSc students—all in one place.",
-  image:
-    "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop&auto=format",
-  bgColor: "rgba(251, 191, 36, 0.7)",
-},
-
+    {
+      title: "All Your BSc Books Here",
+      description:
+        "Didn’t find your BSc book? Don’t worry! Explore and access a wide collection of academic books tailored for BSc students—all in one place.",
+      image:
+        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=300&fit=crop&auto=format",
+      bgColor: "rgba(251, 191, 36, 0.7)",
+    },
 
     {
       title: "Interactive Learning",
@@ -122,47 +121,71 @@ const ELibraryServices = () => {
 
   return (
     <>
-      <div className="services-section relative overflow-hidden" style={{
-        padding: "4rem 0",
-        minHeight: "100vh",
-        fontFamily: "system-ui, -apple-system, sans-serif",
-      }}>
+      <div
+        className="services-section relative overflow-hidden"
+        style={{
+          padding: "4rem 0",
+          minHeight: "100vh",
+          fontFamily: "system-ui, -apple-system, sans-serif",
+        }}
+      >
         {/* Beautiful Blue Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
           {/* Layered gradients for depth */}
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-300/20 via-transparent to-indigo-300/20"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/15 to-transparent"></div>
-          
+
           {/* Animated floating gradient orbs */}
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-400/30 to-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-br from-indigo-400/20 to-purple-400/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute top-20 right-1/3 w-64 h-64 bg-gradient-to-br from-purple-300/20 to-pink-400/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '6s' }}></div>
-          
+          <div
+            className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-br from-indigo-400/20 to-purple-400/25 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "4s" }}
+          ></div>
+          <div
+            className="absolute top-20 right-1/3 w-64 h-64 bg-gradient-to-br from-purple-300/20 to-pink-400/25 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "6s" }}
+          ></div>
+
           {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `
               linear-gradient(rgba(59, 130, 246, 0.8) 1px, transparent 1px),
               linear-gradient(90deg, rgba(59, 130, 246, 0.8) 1px, transparent 1px)
             `,
-            backgroundSize: '25px 25px'
-          }}></div>
+              backgroundSize: "25px 25px",
+            }}
+          ></div>
         </div>
 
-        <div className="relative z-10" style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 1rem",
-        }}>
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800" style={{
-            fontSize: "2rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "3rem",
-            color: "#1f2937",
-            margin: "0 0 3rem 0",
-          }}>
-            Our <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Services</span>
+        <div
+          className="relative z-10"
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 1rem",
+          }}
+        >
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800"
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "3rem",
+              color: "#1f2937",
+              margin: "0 0 3rem 0",
+            }}
+          >
+            Our{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Services
+            </span>
           </h2>
 
           <div
@@ -209,7 +232,8 @@ const ELibraryServices = () => {
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%)",
+                    background:
+                      "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%)",
                     borderRadius: "12px",
                     zIndex: -1,
                   }}
@@ -233,7 +257,8 @@ const ELibraryServices = () => {
                     onMouseEnter={(e) => {
                       if (index === selectedCard) {
                         e.target.style.transform = "rotate(90deg)";
-                        e.target.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+                        e.target.style.backgroundColor =
+                          "rgba(255, 255, 255, 0.2)";
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -294,7 +319,8 @@ const ELibraryServices = () => {
                       boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
                       transition: "all 0.3s ease",
                       opacity: index === selectedCard ? 1 : 0.7,
-                      transform: index === selectedCard ? "scale(1)" : "scale(0.95)",
+                      transform:
+                        index === selectedCard ? "scale(1)" : "scale(0.95)",
                     }}
                   >
                     <img
@@ -341,11 +367,17 @@ const ELibraryServices = () => {
                   height: "12px",
                   borderRadius: "50%",
                   border: "none",
-                  backgroundColor: index === selectedCard ? "#3b82f6" : "rgba(255, 255, 255, 0.6)",
+                  backgroundColor:
+                    index === selectedCard
+                      ? "#3b82f6"
+                      : "rgba(255, 255, 255, 0.6)",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
                   transform: index === selectedCard ? "scale(1.3)" : "scale(1)",
-                  boxShadow: index === selectedCard ? "0 2px 8px rgba(59, 130, 246, 0.4)" : "0 1px 3px rgba(0, 0, 0, 0.1)",
+                  boxShadow:
+                    index === selectedCard
+                      ? "0 2px 8px rgba(59, 130, 246, 0.4)"
+                      : "0 1px 3px rgba(0, 0, 0, 0.1)",
                 }}
                 onMouseEnter={(e) => {
                   if (index !== selectedCard) {

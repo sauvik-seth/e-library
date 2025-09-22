@@ -67,9 +67,10 @@ const Hero = () => {
           <div className="relative flex items-center justify-center">
             <div className="relative w-full max-w-md">
               <img
-                src="/images/Gemini_Generated_Image_vs1bscvs1bscvs1b.png"
+                src="/images/Hero.webp"
                 alt="E-Library books and resources"
                 className="relative z-10 w-full rounded-2xl shadow-2xl"
+                loading="lazy"
                 style={{
                   mixBlendMode: "multiply",
                   filter: "contrast(1.1) brightness(1.1)",
