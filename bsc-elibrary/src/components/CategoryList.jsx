@@ -9,7 +9,7 @@ const categories = [
   },
   {
     name: "Chemistry",
-    image: "/images/chem.png",
+    image: "/images/chem.jpeg",
     description: "Dive into the study of matter and its properties.",
   },
   {

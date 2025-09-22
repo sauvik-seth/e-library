@@ -1,23 +1,26 @@
-import React from 'react';
+import React from "react";
 
 const teamMembers = [
   {
-    name: 'John Doe',
-    role: 'Founder & Lead Developer',
-    image: '/images/sauvik.png', // Placeholder image
-    description: 'John is the visionary behind ReadSphere, leading the development with a passion for accessible education.',
+    name: "John Doe",
+    role: "Founder & Lead Developer",
+    image: "/images/sauvik.png", // Placeholder image
+    description:
+      "John is the visionary behind ReadSphere, leading the development with a passion for accessible education.",
   },
   {
-    name: 'Jane Doe',
-    role: 'Content Strategist',
-    image: '/images/jane.png', // Placeholder image
-    description: 'Jane ensures that our library is filled with high-quality and relevant educational content.',
+    name: "Jane Doe",
+    role: "Content Strategist",
+    image: "/images/jane.png", // Placeholder image
+    description:
+      "Jane ensures that our library is filled with high-quality and relevant educational content.",
   },
   {
-    name: 'John Smith',
-    role: 'Community Manager',
-    image: '/images/john.png', // Placeholder image
-    description: 'John connects with our users, gathering feedback and fostering a vibrant learning community.',
+    name: "John Smith",
+    role: "Community Manager",
+    image: "/images/john.png", // Placeholder image
+    description:
+      "John connects with our users, gathering feedback and fostering a vibrant learning community.",
   },
 ];
 

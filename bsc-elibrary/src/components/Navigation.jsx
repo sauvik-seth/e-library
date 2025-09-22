@@ -20,105 +20,184 @@ const Navigation = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    // Add padding to the parent to see the floating effect
-    <header className="relative z-50 p-4">
-      <div className="container mx-auto">
-        {/* --- Desktop Pill Navigation (Glassmorphism Effect) --- */}
-        <div
-          className="hidden md:flex items-center justify-between rounded-full border border-white/20 
-                     bg-white/30 p-2 shadow-lg backdrop-blur-lg"
-        >
-          {/* Logo */}
+    <>
+      {/* Header with Single Glass Background - Fixed Text Visibility */}
+      <header className="fixed top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 z-50">
+        <div className="flex items-center justify-between px-4 md:px-6 py-2 md:py-3 rounded-full border border-white/20 bg-white/30 shadow-lg backdrop-blur-lg transition-all duration-300 hover:bg-white/40">
+          {/* Logo - Fixed with better spacing */}
           <Link
             to="/"
-            className="pl-4 flex items-center gap-2 text-2xl font-bold text-gray-900"
+            className="flex items-center gap-2 transition-all duration-300 min-w-0 flex-shrink-0"
           >
             <img
               src="/images/logoback.png"
-              alt="B.Sc. e-Library Logo"
-              className="h-8 w-8 object-contain"
+              alt="ReadSphere Logo"
+              className="h-6 md:h-8 w-6 md:w-8 object-contain flex-shrink-0"
             />
-            ReadSphere
+            <span className="text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
+              ReadSphere
+            </span>
           </Link>
 
-          {/* Nav Links */}
-          <div className="flex items-center justify-center flex-1 space-x-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 relative
-                  ${
-                    isActive(link.path)
-                      ? "bg-white/80 text-blue-800 shadow-sm"
-                      : "text-gray-800 hover:bg-white/50"
-                  }
-                group`}
-              >
-                {link.label}
-                <span className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* --- Mobile Navigation --- */}
-        <div className="md:hidden">
-          {/* Mobile Header Bar (Glassmorphism Effect) */}
-          <div
-            className="flex items-center justify-between rounded-xl border border-white/20 
-                       bg-white/30 p-3 shadow-lg backdrop-blur-lg"
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center justify-center w-8 md:w-10 h-8 md:h-10 transition-all duration-300 hover:scale-110 rounded-full flex-shrink-0 ml-4"
+            aria-label="Toggle navigation menu"
           >
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-xl font-bold text-gray-900"
-            >
-              <img
-                src="/images/logo.png"
-                alt="B.Sc. e-Library Logo"
-                className="h-7 w-7 object-contain"
-              />
-              B.Sc. e-Library
-            </Link>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-800" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-800" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Menu Dropdown */}
-          {isMenuOpen && (
-            <div
-              className="mt-2 rounded-xl border border-white/20 bg-white/50 
-                         p-4 shadow-lg backdrop-blur-lg"
-            >
-              <div className="flex flex-col space-y-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`rounded-lg px-4 py-2 text-base font-medium transition-colors duration-300 relative
-                      ${
-                        isActive(link.path)
-                          ? "bg-white/80 text-blue-800 shadow-sm"
-                          : "text-gray-800 hover:bg-white/50"
-                      }
-                    group`}
-                  >
-                    {link.label}
-                    <span className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+            {isMenuOpen ? (
+              <X className="h-5 md:h-6 w-5 md:w-6 text-gray-800" />
+            ) : (
+              <Menu className="h-5 md:h-6 w-5 md:w-6 text-gray-800" />
+            )}
+          </button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Full Screen Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center">
+          {/* Background Overlay */}
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+
+          {/* Menu Content */}
+          <div className="relative z-50 flex flex-col items-center justify-center space-y-6 md:space-y-8 p-4 md:p-8 w-full h-full">
+            {/* Navigation Links with Gradient Effect */}
+            <nav className="flex flex-col items-center space-y-6 md:space-y-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`nav-link-gradient relative text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold transition-all duration-300 uppercase tracking-wide cursor-pointer ${
+                    isActive(link.path) ? "is-active" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
+
+      {/* Enhanced CSS Styles with Proper Hover */}
+      <style jsx>{`
+        .nav-link-gradient {
+          position: relative;
+          transition: all 300ms ease;
+          width: fit-content;
+          color: white;
+        }
+
+        /* Active state - always has gradient */
+        .nav-link-gradient.is-active {
+          background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+        }
+
+        /* Hover state - gradient on hover */
+        .nav-link-gradient:hover:not(.is-active) {
+          background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4));
+        }
+
+        /* Simple skew effect on hover */
+        .nav-link-gradient:hover {
+          transform: skew(5deg);
+        }
+
+        /* Enhanced underline animation with gradient */
+        .nav-link-gradient::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
+          transition: all 300ms ease;
+          border-radius: 2px;
+        }
+
+        /* Hover underline effect */
+        .nav-link-gradient:hover::after {
+          width: 100%;
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Active state underline always visible */
+        .nav-link-gradient.is-active::after {
+          width: 100%;
+          background: linear-gradient(to right, #2563eb, #4f46e5, #7c3aed);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Animation for menu open/close */
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .nav-link-gradient {
+          animation: slideIn 0.4s ease-out;
+        }
+
+        /* Staggered animation for menu items */
+        .nav-link-gradient:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        .nav-link-gradient:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .nav-link-gradient:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        .nav-link-gradient:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+        .nav-link-gradient:nth-child(5) {
+          animation-delay: 0.5s;
+        }
+
+        /* Mobile-specific responsive adjustments */
+        @media (max-width: 768px) {
+          .nav-link-gradient::after {
+            bottom: -6px;
+            height: 2px;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .nav-link-gradient::after {
+            bottom: -8px;
+            height: 3px;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .nav-link-gradient::after {
+            bottom: -10px;
+            height: 4px;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 

@@ -55,16 +55,28 @@ const features = [
 
 export default function FeaturesTicker() {
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          What We <span className="text-blue-600">Provide</span>
+    <section className="py-20 overflow-hidden relative">
+      {/* Beautiful Blue Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
+        {/* Additional gradient layers for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-transparent to-indigo-400/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/20 to-transparent"></div>
+        
+        {/* Animated gradient orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-300/30 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-indigo-300/20 to-purple-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-300/20 to-blue-400/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          What We <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Provide</span>
         </h2>
 
         <div className="relative">
-          {/* gradient mask for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+          {/* Updated gradient masks to match new background */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-50 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50 to-transparent z-10"></div>
 
           {/* scrolling row */}
           <div
@@ -77,14 +89,14 @@ export default function FeaturesTicker() {
             {[...features, ...features].map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl 
-                           transition-shadow duration-300 flex items-center min-w-[300px] flex-shrink-0"
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl hover:bg-white/90
+                           transition-all duration-300 flex items-center min-w-[300px] flex-shrink-0 border border-white/50"
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 to-purple-100 mr-4 flex-shrink-0">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100/80 to-indigo-200/80 mr-4 flex-shrink-0 backdrop-blur-sm">
                   {feature.icon}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">
+                  <h4 className="font-semibold text-lg mb-1 text-gray-800">
                     {feature.title}
                   </h4>
                   <p className="text-gray-600 text-sm">{feature.description}</p>
@@ -103,6 +115,18 @@ export default function FeaturesTicker() {
           }
           100% {
             transform: translateX(-50%);
+          }
+        }
+        
+        /* Enhanced pulse animation for gradient orbs */
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: scale(1.05);
           }
         }
       `}</style>

@@ -4,54 +4,70 @@ import React from "react";
 const reviews = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    photo: "https://via.placeholder.com/100",
+    name: "Aarav Sharma",
+    rating: 5,
     review:
       "This e-library has been a game-changer for my studies. All the books I need are easily accessible.",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    photo: "https://via.placeholder.com/100",
+    name: "Ishita Mukherjee",
+    rating: 4,
     review:
       "The quality of resources available here is exceptional. It has helped me excel in my coursework.",
   },
   {
     id: 3,
-    name: "Emily Brown",
-    photo: "https://via.placeholder.com/100",
+    name: "Vikram Iyer",
+    rating: 5,
     review:
       "Having 24/7 access to these books has made my learning journey so much easier.",
   },
   {
     id: 4,
-    name: "David Lee",
-    photo: "https://via.placeholder.com/100",
+    name: "Neha Verma",
+    rating: 4,
     review:
       "The search functionality is excellent, I can always find what I need quickly.",
   },
   {
     id: 5,
-    name: "Sophia Garcia",
-    photo: "https://via.placeholder.com/100",
+    name: "Rohan Banerjee",
+    rating: 5,
     review:
       "A fantastic resource for students, highly recommend it to everyone.",
   },
   {
     id: 6,
-    name: "James Rodriguez",
-    photo: "https://via.placeholder.com/100",
+    name: "Sanya Gupta",
+    rating: 4,
     review:
       "The interface is clean and user-friendly, making it a pleasure to browse.",
   },
-  {
-    id: 7,
-    name: "Olivia Martinez",
-    photo: "https://via.placeholder.com/100",
-    review:
-      "I love the variety of subjects covered. It's my go-to for academic resources.",
-  },
 ];
+
+// Utility: render stars by rating (out of 5)
+const Stars = ({ rating = 0 }) => {
+  const total = 5;
+  return (
+    <div className="flex items-center gap-1" aria-label={`Rating: ${rating} out of 5`}>
+      {Array.from({ length: total }).map((_, idx) => {
+        const filled = idx < rating;
+        return (
+          <svg
+            key={idx}
+            viewBox="0 0 20 20"
+            className={`w-4 h-4 ${filled ? "text-yellow-400" : "text-gray-300"}`}
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.01 3.108a1 1 0 00.95.69h3.263c.969 0 1.371 1.24.588 1.81l-2.642 1.92a1 1 0 00-.364 1.118l1.01 3.108c.3.921-.755 1.688-1.54 1.118l-2.642-1.92a1 1 0 00-1.176 0l-2.642 1.92c-.785.57-1.84-.197-1.54-1.118l1.01-3.108a1 1 0 00-.364-1.118l-2.642-1.92c-.783-.57-.38-1.81.588-1.81h3.263a1 1 0 00.95-.69l1.01-3.108z" />
+          </svg>
+        );
+      })}
+    </div>
+  );
+};
 
 export default function Reviews() {
   return (
@@ -79,14 +95,13 @@ export default function Reviews() {
                 key={`${review.id}-${i}`}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0 w-80"
               >
-                <div className="flex items-center mb-4">
-                  <img
-                    src={review.photo}
-                    alt={review.name}
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                  <h3 className="font-semibold">{review.name}</h3>
+                {/* Name + Rating */}
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-semibold text-gray-900">{review.name}</h3>
+                  <Stars rating={review.rating} />
                 </div>
+
+                {/* Review text */}
                 <p className="text-gray-600 italic">"{review.review}"</p>
               </div>
             ))}

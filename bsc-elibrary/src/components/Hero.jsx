@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-gray-900 text-white">
-      {/* Mesh Gradient Background */}
+      {/* Clean Mesh Gradient Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,150,0.15),rgba(255,255,255,0))]"></div>
         <div className="absolute bottom-[-10%] right-[-20%] top-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,150,255,0.15),rgba(255,255,255,0))]"></div>
@@ -63,16 +63,20 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Section: Image */}
+          {/* Right Section: Clean Image */}
           <div className="relative flex items-center justify-center">
             <div className="relative w-full max-w-md">
               <img
                 src="/images/Gemini_Generated_Image_vs1bscvs1bscvs1b.png"
                 alt="E-Library books and resources"
                 className="relative z-10 w-full rounded-2xl shadow-2xl"
+                style={{
+                  mixBlendMode: "multiply",
+                  filter: "contrast(1.1) brightness(1.1)",
+                }}
               />
-              {/* Decorative glow behind the image */}
-              <div className="absolute inset-0 z-0 -m-4 rounded-2xl bg-gradient-to-tr from-blue-500/30 to-emerald-500/30 opacity-50 blur-2xl"></div>
+              {/* Simple decorative glow */}
+              <div className="absolute inset-0 z-0 -m-4 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-emerald-500/20 opacity-60 blur-xl"></div>
             </div>
           </div>
         </div>
