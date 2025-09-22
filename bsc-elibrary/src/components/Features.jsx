@@ -54,80 +54,76 @@ const features = [
 ];
 
 export default function FeaturesTicker() {
+  const items = [...features, ...features]; // duplicate for seamless loop
+
   return (
     <section className="py-20 overflow-hidden relative">
-      {/* Beautiful Blue Gradient Background */}
+      {/* blue/purple ambient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
-        {/* Additional gradient layers for depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-transparent to-indigo-400/10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/20 to-transparent"></div>
-        
-        {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-300/30 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-indigo-300/20 to-purple-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-300/20 to-blue-400/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-transparent to-indigo-400/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/20 to-transparent" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-300/30 to-indigo-400/20 rounded-full blur-3xl animate-[pulse_4s_ease-in-out_infinite]" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-indigo-300/20 to-purple-400/30 rounded-full blur-3xl animate-[pulse_4s_2s_ease-in-out_infinite]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-300/20 to-blue-400/25 rounded-full blur-3xl animate-[pulse_4s_4s_ease-in-out_infinite]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          What We <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Provide</span>
+          What We{" "}
+          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Provide
+          </span>
         </h2>
 
         <div className="relative">
-          {/* Updated gradient masks to match new background */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-50 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50 to-transparent z-10"></div>
-
-          {/* scrolling row */}
-          <div
-            className="flex gap-6 animate-scroll"
-            style={{
-              animation: "scroll 10s linear infinite",
-              minWidth: "calc(200% + 150px)",
-            }}
-          >
-            {[...features, ...features].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl hover:bg-white/90
-                           transition-all duration-300 flex items-center min-w-[300px] flex-shrink-0 border border-white/50"
-              >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100/80 to-indigo-200/80 mr-4 flex-shrink-0 backdrop-blur-sm">
-                  {feature.icon}
+          {/* edge fades via mask, not overlays */}
+          <div className="overflow-hidden [--fade:2.5rem] [mask-image:linear-gradient(90deg,transparent_0%,#000_calc(0%+var(--fade)),#000_calc(100%-var(--fade)),transparent_100%)]">
+            <div
+              className="flex gap-6 animate-ticker will-change-transform"
+              style={{ width: "max-content" }}
+            >
+              {items.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl hover:bg-white/90 transition-all duration-300 flex items-center min-w-[300px] flex-shrink-0 border border-white/50"
+                >
+                  <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100/80 to-indigo-200/80 mr-4 flex-shrink-0 backdrop-blur-sm">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1 text-gray-800">
+                      {feature.title}
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-lg mb-1 text-gray-800">
-                    {feature.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* keyframes for scrolling */}
+      {/* keyframes */}
       <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes ticker {
+          0%   { transform: translate3d(0,0,0); }
+          100% { transform: translate3d(-50%,0,0); }
         }
-        
-        /* Enhanced pulse animation for gradient orbs */
+        .animate-ticker { animation: ticker 28s linear infinite; }
+  @media (max-width: 1024px){ .animate-ticker{ animation-duration: 20s; } }
+@media (max-width: 768px){ .animate-ticker{ animation-duration: 28s; } }
+@media (max-width: 480px){ .animate-ticker{ animation-duration: 20s; } }
+
         @keyframes pulse {
-          0%, 100% {
-            opacity: 0.4;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-          }
+          0%,100% { opacity: .4; transform: scale(1); }
+          50%     { opacity: .8; transform: scale(1.05); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-ticker { animation: none !important; }
+          [class*="animate-[pulse"] { animation: none !important; }
         }
       `}</style>
     </section>
