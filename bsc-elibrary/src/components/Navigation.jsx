@@ -34,11 +34,14 @@ const Navigation = () => {
             to="/"
             className="flex items-center gap-2 transition-all duration-300 min-w-0 flex-shrink-0"
           >
-            <img
-              src="/images/logoback.png"
-              alt="ReadSphere Logo"
-              className="h-6 md:h-8 w-6 md:w-8 object-contain flex-shrink-0"
-            />
+            {/*
+<img
+  src="/images/G.png"
+  alt="ReadSphere Logo"
+  className="h-6 md:h-8 w-6 md:w-8 object-contain flex-shrink-0"
+/>
+*/}
+
             <span className="text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
               ReadSphere
             </span>

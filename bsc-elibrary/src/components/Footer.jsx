@@ -32,7 +32,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Side - Large Navigation */}
           <div className="space-y-8">
-            {/* Navigation Links with Large Typography */}
             <div className="space-y-4">
               <Link
                 to="/"
@@ -74,12 +73,12 @@ const Footer = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-4 text-2xl text-gray-800">
                 <Mail className="w-8 h-8 text-blue-600" />
-                <span className="font-mono">info@bscelibrary.com</span>
+                <span className="font-mono">readsphere@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-4 text-2xl text-gray-800">
                 <Phone className="w-8 h-8 text-blue-600" />
-                <span className="font-mono">(123) 456-7890</span>
+                <span className="font-mono">+91 8245984094</span>
               </div>
             </div>
 
@@ -120,11 +119,20 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="mt-16 pt-8 border-t border-gray-300/50 text-center">
+        {/* Copyright + Disclaimer */}
+        <div className="mt-16 pt-8 border-t border-gray-300/50 text-center space-y-3">
           <p className="text-gray-600 text-lg">
-            &copy; {new Date().getFullYear()} B.Sc. e-Library. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} ReadSphere. All rights reserved.
+          </p>
+          <p className="mx-auto max-w-3xl px-4 text-sm leading-6 text-gray-600">
+            Third‑party content disclaimer: Book files, titles, cover images, and metadata on this site are the property of their respective copyright owners and are provided for educational and reference purposes only; no ownership is claimed. If any material infringes rights, please contact{" "}
+            <a
+              href="mailto:readsphere@gmail.com"
+              className="underline decoration-blue-400 underline-offset-2"
+            >
+              readsphere@gmail.com
+            </a>{" "}
+            with the work title, URL, and proof of ownership for prompt removal.
           </p>
         </div>
       </div>
@@ -149,18 +157,14 @@ const Footer = () => {
             font-size: 4rem;
             line-height: 1;
           }
-
           .text-7xl {
             font-size: 3.5rem;
             line-height: 1;
           }
-
           .text-6xl {
             font-size: 3rem;
             line-height: 1;
           }
-
-          /* Adjust background text for mobile */
           .text-background-letters {
             font-size: clamp(8rem, 20vw, 15rem);
             transform: rotate(-10deg);
@@ -172,25 +176,20 @@ const Footer = () => {
             font-size: 2.5rem;
             line-height: 1.1;
           }
-
           .text-7xl {
             font-size: 2.25rem;
             line-height: 1.1;
           }
-
           .text-6xl {
             font-size: 2rem;
             line-height: 1.1;
           }
-
-          /* Further adjust background text for small mobile */
           .text-background-letters {
             font-size: clamp(6rem, 18vw, 12rem);
             transform: rotate(-8deg);
           }
         }
 
-        /* Ensure the background text doesn't interfere with interactions */
         .text-background-letters {
           user-select: none;
           pointer-events: none;

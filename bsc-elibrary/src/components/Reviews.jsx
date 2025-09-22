@@ -78,10 +78,22 @@ export default function Reviews() {
   return (
     <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">
-          <span className="text-black">Students</span>{" "}
-          <span className="text-blue-600">Reviews</span>
-        </h2>
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800"
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "3rem",
+              color: "#1f2937",
+              margin: "0 0 3rem 0",
+            }}
+          >
+            Student{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Reviews
+            </span>
+          </h2>
 
         <div className="relative">
           {/* edge fades to match FeaturesTicker look */}

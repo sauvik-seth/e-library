@@ -7,6 +7,11 @@ const categories = [
     image: "/images/cs.webp",
     description: "Explore the world of algorithms, programming, and data.",
   },
+   {
+    name: "Mathematics",
+    image: "/images/math.png",
+    description: "Discover the beauty of numbers, logic, and patterns.",
+  },
   {
     name: "Chemistry",
     image: "/images/chem.jpeg",
@@ -17,11 +22,7 @@ const categories = [
     image: "/images/phy.png",
     description: "Unravel the mysteries of the universe and its forces.",
   },
-  {
-    name: "Mathematics",
-    image: "/images/math.png",
-    description: "Discover the beauty of numbers, logic, and patterns.",
-  },
+ 
   {
     name: "Biology",
     image: "/images/bio1.png",
@@ -34,9 +35,22 @@ const CategoryList = () => {
   return (
     <div className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          Explore Our <span className="text-blue-600">Categories</span>
-        </h2>
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800"
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "3rem",
+              color: "#1f2937",
+              margin: "0 0 3rem 0",
+            }}
+          >
+            Explore Our{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Categories
+            </span>
+          </h2>
         {/*
           - Default: 2 columns for mobile (grid-cols-2)
           - sm (640px and up): 3 columns

@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Download, Heart, BookOpen, ArrowRight, X, AlertCircle, CheckCircle } from "lucide-react";
+import {
+  Download,
+  Heart,
+  BookOpen,
+  ArrowRight,
+  X,
+  AlertCircle,
+  CheckCircle,
+} from "lucide-react";
 
 const categories = [
   "All",
-  "Physics", 
+  "Physics",
   "Chemistry",
   "Mathematics",
   "Computer Science",
@@ -18,44 +26,56 @@ const books = [
     author: "Richard Grimes",
     category: "Computer Science",
     coverImage: "/images/c++.webp",
-    downloadLink: "https://notalentgeek.github.io/note/note/project/project-independent/pi-brp-beginning-c-programming/document/20170807-1504-cet-1-book-and-source-1.pdf",
-    description: "Master the fundamentals of C++ programming with practical examples and exercises."
+    downloadLink:
+      "https://notalentgeek.github.io/note/note/project/project-independent/pi-brp-beginning-c-programming/document/20170807-1504-cet-1-book-and-source-1.pdf",
+    description:
+      "Master the fundamentals of C++ programming with practical examples and exercises.",
   },
   {
     id: 2,
     title: "Let us C",
     author: "Yashvant Kanetkar",
-    category: "Computer Science", 
+    category: "Computer Science",
     coverImage: "/images/letusc.webp",
-    downloadLink: "https://www.scribd.com/document/357888203/let-us-c-yashwant-kanetkar-pdf",
-    description: "The classic guide to C programming, perfect for beginners and experts alike."
+    downloadLink:
+      "https://www.scribd.com/document/357888203/let-us-c-yashwant-kanetkar-pdf",
+    description:
+      "The classic guide to C programming, perfect for beginners and experts alike.",
   },
   {
     id: 3,
     title: "Digital Electronics",
     author: "Anil K. Maini",
     category: "Computer Science",
-    coverImage: "https://m.media-amazon.com/images/I/71X1jS-9iOL._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
-    description: "Comprehensive coverage of digital electronics concepts and applications."
+    coverImage:
+      "https://m.media-amazon.com/images/I/71X1jS-9iOL._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
+    description:
+      "Comprehensive coverage of digital electronics concepts and applications.",
   },
   {
     id: 4,
     title: "Computer System Architecture",
     author: "M. Morris Mano",
     category: "Computer Science",
-    coverImage: "https://m.media-amazon.com/images/I/81Ve58ZJLEL.jpg", 
-    downloadLink: "https://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
-    description: "Essential guide to computer architecture and organization principles."
+    coverImage: "https://m.media-amazon.com/images/I/81Ve58ZJLEL.jpg",
+    downloadLink:
+      "https://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf",
+    description:
+      "Essential guide to computer architecture and organization principles.",
   },
   {
     id: 5,
     title: "Introduction to Programming using Java",
     author: "David J. Eck",
     category: "Computer Science",
-    coverImage: "https://m.media-amazon.com/images/I/61Xdjv+7R3L._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://www.iitk.ac.in/esc101/share/downloads/javanotes5.pdf",
-    description: "Learn Java programming from scratch with hands-on examples and projects."
+    coverImage:
+      "https://m.media-amazon.com/images/I/61Xdjv+7R3L._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://www.iitk.ac.in/esc101/share/downloads/javanotes5.pdf",
+    description:
+      "Learn Java programming from scratch with hands-on examples and projects.",
   },
   {
     id: 6,
@@ -63,8 +83,10 @@ const books = [
     author: "Robert Lafore",
     category: "Computer Science",
     coverImage: "/images/java.jpg",
-    downloadLink: "https://gnindia.dronacharya.info/CSE/3rdSem/Downloads/DataStructures/Books/DATA-STRUCTURE-BOOK-12.pdf",
-    description: "Master data structures and algorithms with clear explanations and Java code examples."
+    downloadLink:
+      "https://gnindia.dronacharya.info/CSE/3rdSem/Downloads/DataStructures/Books/DATA-STRUCTURE-BOOK-12.pdf",
+    description:
+      "Master data structures and algorithms with clear explanations and Java code examples.",
   },
   {
     id: 7,
@@ -72,26 +94,32 @@ const books = [
     author: "Burnside,William Snow",
     category: "Mathematics",
     coverImage: "https://cdn01.sapnaonline.com/bk_images/788/9781298618788.jpg",
-    downloadLink: "The Theory Of Equations Vol I : Burnside,William Snow. : Free Download, Borrow, and Streaming : Internet Archive https://share.google/ILxCsrvF2VKHg7ugC",
-    description: "Master data structures and algorithms with clear explanations and Java code examples."
+    downloadLink:
+      "The Theory Of Equations Vol I : Burnside,William Snow. : Free Download, Borrow, and Streaming : Internet Archive https://share.google/ILxCsrvF2VKHg7ugC",
+    description:
+      "Master data structures and algorithms with clear explanations and Java code examples.",
   },
   {
     id: 8,
     title: "The Theory of equations",
     author: "W.S. Burnside and A.W. Panton",
     category: "Mathematics",
-    coverImage: "https://m.media-amazon.com/images/I/51D3pEE64xL._UF1000,1000_QL80_.jpg",
+    coverImage:
+      "https://m.media-amazon.com/images/I/51D3pEE64xL._UF1000,1000_QL80_.jpg",
     downloadLink: "https://share.google/CvGFAX9H3cgjF9ZE0",
-    description: "Master data structures and algorithms with clear explanations and Java code examples."
+    description:
+      "Master data structures and algorithms with clear explanations and Java code examples.",
   },
   {
     id: 9,
     title: "Calculus",
     author: "WStrauss, Monty J",
     category: "Mathematics",
-    coverImage: "https://m.media-amazon.com/images/I/31evVVo3eYL._UF1000,1000_QL80_.jpg",
+    coverImage:
+      "https://m.media-amazon.com/images/I/31evVVo3eYL._UF1000,1000_QL80_.jpg",
     downloadLink: "https://share.google/HjtzXYL4WAphfykun",
-    description: "Master data structures and algorithms with clear explanations and Java code examples."
+    description:
+      "Master data structures and algorithms with clear explanations and Java code examples.",
   },
 ];
 
@@ -106,19 +134,26 @@ const Books = () => {
 
   useEffect(() => {
     if (categoryName) {
-      const decodedCategory = decodeURIComponent(categoryName).replace(/-/g, " ");
+      const decodedCategory = decodeURIComponent(categoryName).replace(
+        /-/g,
+        " "
+      );
       setSelectedCategory(decodedCategory);
     } else {
       setSelectedCategory("All");
     }
   }, [categoryName]);
 
-  const filteredBooks = selectedCategory === "All" 
-    ? books 
-    : books.filter(book => book.category.toLowerCase() === selectedCategory.toLowerCase());
+  const filteredBooks =
+    selectedCategory === "All"
+      ? books
+      : books.filter(
+          (book) =>
+            book.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
   const toggleFavorite = (bookId) => {
-    setFavorites(prev => {
+    setFavorites((prev) => {
       const newFavorites = new Set(prev);
       if (newFavorites.has(bookId)) {
         newFavorites.delete(bookId);
@@ -138,11 +173,11 @@ const Books = () => {
 
   const handleConfirmDownload = () => {
     setIsDownloading(true);
-    
+
     // Simulate download process
     setTimeout(() => {
       // Open the download link
-      window.open(selectedBook.downloadLink, '_blank', 'noopener,noreferrer');
+      window.open(selectedBook.downloadLink, "_blank", "noopener,noreferrer");
       setIsDownloading(false);
       setShowDownloadModal(false);
       setSelectedBook(null);
@@ -158,16 +193,16 @@ const Books = () => {
   // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && showDownloadModal) {
+      if (e.key === "Escape" && showDownloadModal) {
         handleCancelDownload();
       }
     };
-    
+
     if (showDownloadModal) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
-    
-    return () => document.removeEventListener('keydown', handleEscape);
+
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [showDownloadModal]);
 
   return (
@@ -176,11 +211,17 @@ const Books = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-300/20 via-transparent to-indigo-300/20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/10 to-transparent"></div>
-        
+
         {/* Animated gradient orbs */}
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-400/30 to-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-br from-indigo-400/20 to-purple-400/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div
+          className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-cyan-400/25 to-blue-500/30 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-br from-indigo-400/20 to-purple-400/25 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "4s" }}
+        ></div>
       </div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -195,7 +236,8 @@ const Books = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our curated collection of academic resources designed to enhance your learning journey
+            Discover our curated collection of academic resources designed to
+            enhance your learning journey
           </p>
         </div>
 
@@ -228,7 +270,6 @@ const Books = () => {
               >
                 {/* Glassmorphism Card */}
                 <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl border border-white/50 shadow-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
-                  
                   {/* Book Cover */}
                   <div className="relative overflow-hidden rounded-t-3xl">
                     <img
@@ -238,10 +279,10 @@ const Books = () => {
                       decoding="async"
                       className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110"
                     />
-                    
+
                     {/* Overlay Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
+
                     {/* Favorite Button */}
                     <button
                       onClick={(e) => {
@@ -250,10 +291,12 @@ const Books = () => {
                       }}
                       className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-300 hover:bg-white/40 hover:scale-110"
                     >
-                      <Heart 
+                      <Heart
                         className={`w-5 h-5 transition-colors duration-300 ${
-                          favorites.has(book.id) ? 'text-red-500 fill-red-500' : 'text-white'
-                        }`} 
+                          favorites.has(book.id)
+                            ? "text-red-500 fill-red-500"
+                            : "text-white"
+                        }`}
                       />
                     </button>
                   </div>
@@ -294,9 +337,12 @@ const Books = () => {
           <div className="text-center py-20">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl border border-white/50 p-12 max-w-md mx-auto shadow-xl">
               <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Books Found</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                No Books Found
+              </h3>
               <p className="text-gray-600">
-                No books available in the <strong>{selectedCategory}</strong> category yet.
+                No books available in the <strong>{selectedCategory}</strong>{" "}
+                category yet.
               </p>
             </div>
           </div>
@@ -307,7 +353,7 @@ const Books = () => {
       {showDownloadModal && selectedBook && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <div 
+          <div
             className="absolute inset-0 bg-black/60 backdrop-blur-md"
             onClick={handleCancelDownload}
           ></div>
@@ -348,8 +394,9 @@ const Books = () => {
 
               <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 mb-6">
                 <p className="text-gray-800 text-sm leading-relaxed">
-                  Are you sure you want to download <strong>"{selectedBook.title}"</strong>? 
-                  This will open a new tab and begin the download process.
+                  Are you sure you want to download{" "}
+                  <strong>"{selectedBook.title}"</strong>? This will open a new
+                  tab and begin the download process.
                 </p>
               </div>
 
@@ -388,7 +435,8 @@ const Books = () => {
       {/* Enhanced CSS Styles */}
       <style jsx>{`
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.3;
             transform: scale(1);
           }

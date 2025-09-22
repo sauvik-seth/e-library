@@ -25,7 +25,7 @@ const AboutUs = () => {
             <div className="relative w-full max-w-sm rounded-2xl bg-white p-4 shadow-2xl">
               <div className="aspect-w-4 aspect-h-4 overflow-hidden rounded-xl">
                 <img
-                  src="/images/Aboutus.webp" // Replace with your image path
+                  src="/images/Aboutuss.webp" // Replace with your image path
                   alt="A person reading in a modern library setting"
                   className="h-full w-full object-cover"
                 />
@@ -44,7 +44,7 @@ const AboutUs = () => {
               Knowledge for a World on the Move.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Welcome to <strong>B.Sc. e-Library</strong>, where we believe that
+              Welcome to <strong>ReadSphere B.Sc. e-Library</strong>, where we believe that
               knowledge should be limitless and accessible to everyone. We
               started with a simple idea: to create a digital space where the
               joy of reading and the pursuit of knowledge are just a click away.
