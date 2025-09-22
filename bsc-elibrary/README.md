@@ -1,12 +1,55 @@
-# React + Vite
+# BSC eLibrary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This eLibrary application is a modern, responsive platform designed to provide users with easy access to a collection of books. Built with React, Vite, and Tailwind CSS, it offers a seamless browsing and reading experience. Users can explore books categorized by subject, download their favorites, and learn more about the development team. The application emphasizes a clean user interface and efficient performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a React-based eLibrary application built with Vite and Tailwind CSS.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse books by category
+- Download books
+- Contact form
+- Team section
+
+## Technologies Used
+
+- React
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Lucide React (for icons)
+- React Icons (for social media icons)
+- Formspree (for contact form)
+
+## Setup and Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd bsc-elibrary
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be accessible at `http://localhost:5174/` (or another port if 5173 is in use).
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+This will create a `dist` directory with the production-ready build.
