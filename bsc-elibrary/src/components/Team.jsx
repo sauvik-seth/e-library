@@ -2,11 +2,11 @@ import React from "react";
 import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const members = [
-  { name: "jit Paul", role: "B.Sc Computer Science Student", image: "/images/jit.png" },
-  { name: "Sauvik Seth", role: "B.Sc Computer Science Student", image: "/images/sauvik.png" },
-  { name: "Suman Mandal", role: "B.Sc Computer Science Student", image: "/images/suman.png" },
-  { name: "Plabon Mandal", role: "B.Sc Computer Science Student", image: "/images/plabon.png" },
-  { name: "Supriya Mandal", role: "B.Sc Computer Science Student", image: "/images/supriya.png" },
+  { name: "jit Paul", role: "B.Sc Computer Science Student", image: "/images/jit.webp" },
+  { name: "Sauvik Seth", role: "B.Sc Computer Science Student", image: "/images/sauvik.webp" },
+  { name: "Suman Mandal", role: "B.Sc Computer Science Student", image: "/images/suman.webp" },
+  { name: "Plabon Mandal", role: "B.Sc Computer Science Student", image: "/images/plaban.webp" },
+  { name: "Supriya Mandal", role: "B.Sc Computer Science Student", image: "/images/supriya.webp" },
 ];
 
 const Card = ({ m }) => {
