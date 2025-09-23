@@ -126,8 +126,10 @@ const books = [
     title: "Physical chemistry",
     author: "Atkin",
     category: "Chemistry",
-    coverImage:"https://m.media-amazon.com/images/I/91PS2c6hjqL._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://nowgonggirlscollege.co.in/attendence/classnotes/files/1621583343.pdf",
+    coverImage:
+      "https://m.media-amazon.com/images/I/91PS2c6hjqL._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://nowgonggirlscollege.co.in/attendence/classnotes/files/1621583343.pdf",
     description:
       "An authoritative overview of thermodynamics, kinetics, quantum chemistry, and spectroscopy that bridges theory with practical chemical systems.",
   },
@@ -136,8 +138,10 @@ const books = [
     title: "Organic chemistry",
     author: "Jonathan, Nick",
     category: "Chemistry",
-    coverImage:"https://m.media-amazon.com/images/I/61XeLR07VFL._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
+    coverImage:
+      "https://m.media-amazon.com/images/I/61XeLR07VFL._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
     description:
       "A mechanisms-first approach that builds deep intuition for reactivity and synthesis, with rich problems and real-world molecular reasoning.",
   },
@@ -146,8 +150,9 @@ const books = [
     title: "Concepts of modern physics",
     author: "Arthur Beiser",
     category: "Physics",
-    coverImage:"https://m.media-amazon.com/images/I/71jSV4NxceL.jpg",
-    downloadLink: "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
+    coverImage: "https://m.media-amazon.com/images/I/71jSV4NxceL.jpg",
+    downloadLink:
+      "https://blogmedia.testbook.com/kmat-kerala/wp-content/uploads/2023/06/organic-chemistry-by-jonathan-clayden-nick-greeves-stuart-warren-z-lib.org_-847123c1.pdf",
     description:
       "A clear introduction to special relativity, quantum theory, atomic and nuclear physics, prioritizing conceptual frameworks with worked derivations.",
   },
@@ -156,8 +161,10 @@ const books = [
     title: "Quantam Mechanics",
     author: "Nouredine Zettili",
     category: "Physics",
-    coverImage:"https://m.media-amazon.com/images/I/71b8cOIVY3L._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://www.mmmut.ac.in/News_content/02110tpnews_11232020.pdf",
+    coverImage:
+      "https://m.media-amazon.com/images/I/71b8cOIVY3L._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://www.mmmut.ac.in/News_content/02110tpnews_11232020.pdf",
     description:
       "A problem-solving centered text that blends formalism with hundreds of worked examples and exercises to master quantum mechanics concepts and methods.",
   },
@@ -166,8 +173,10 @@ const books = [
     title: "Introduction to Human physiology",
     author: "Dr. Azza Sajid Alkinany",
     category: "Biology",
-    coverImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkEAQZdTLpzOG0lWfRZdFSAy1ZoezfOHLSw&s",
-    downloadLink: "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
+    coverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShkEAQZdTLpzOG0lWfRZdFSAy1ZoezfOHLSw&s",
+    downloadLink:
+      "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
     description:
       "A concise survey of body systems explaining cellular function, organ integration, and homeostasis with accessible diagrams and clinical context.",
   },
@@ -176,8 +185,10 @@ const books = [
     title: "Essentials of Anatomy and Physiology ",
     author: "Valerie C. Scanlon",
     category: "Biology",
-    coverImage:"https://m.media-amazon.com/images/I/916z0ZZmqxL._UF1000,1000_QL80_.jpg",
-    downloadLink: "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
+    coverImage:
+      "https://m.media-amazon.com/images/I/916z0ZZmqxL._UF1000,1000_QL80_.jpg",
+    downloadLink:
+      "https://ttwrdcs.ac.in/Mahabubabad/pdf/2106900770Introductiontohumanphysiology.pdf",
     description:
       "An easy-to-follow guide to human anatomy and physiology that connects structure to function with clinical notes, visuals, and review questions.",
   },
@@ -194,7 +205,10 @@ const Books = () => {
 
   useEffect(() => {
     if (categoryName) {
-      const decodedCategory = decodeURIComponent(categoryName).replace(/-/g, " ");
+      const decodedCategory = decodeURIComponent(categoryName).replace(
+        /-/g,
+        " "
+      );
       setSelectedCategory(decodedCategory);
     } else {
       setSelectedCategory("All");
