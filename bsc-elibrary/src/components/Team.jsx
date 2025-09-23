@@ -2,8 +2,8 @@ import React from "react";
 import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const members = [
-  { name: "jit Paul", role: "B.Sc Computer Science Student", image: "/images/jit.webp" },
   { name: "Sauvik Seth", role: "B.Sc Computer Science Student", image: "/images/sauvik.webp" },
+  { name: "jit Paul", role: "B.Sc Computer Science Student", image: "/images/jit.webp" },
   { name: "Suman Mandal", role: "B.Sc Computer Science Student", image: "/images/suman.webp" },
   { name: "Plabon Mandal", role: "B.Sc Computer Science Student", image: "/images/plaban.webp" },
   { name: "Supriya Mandal", role: "B.Sc Computer Science Student", image: "/images/supriya.webp" },
