@@ -6,8 +6,6 @@ const members = [
   { name: "jit Paul", role: "B.Sc Computer Science Student", image: "/images/jit.webp" },
   { name: "Suman Mandal", role: "B.Sc Computer Science Student", image: "/images/suman.webp" },
   { name: "Plabon Mandal", role: "B.Sc Computer Science Student", image: "/images/plaban.webp" },
-  { name: "Supriya Mandal", role: "B.Sc Computer Science Student", image: "/images/supriya.webp" },
-  { name: "Biswajit Chowdhury", role: "B.Sc Computer Science Student", image: "/images/biswajit.png" },
 ];
 
 const Card = ({ m }) => {
